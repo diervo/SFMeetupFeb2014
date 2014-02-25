@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="initial-scale=0.4, maximum-scale=0.4, minimum-scale=0.4, user-scalable=no" name="viewport"/>
+    <title>The Animation</title>
+    <style>
+     body, html {
+        margin: 0;
+        padding: 0;
+     }
+     body {
+        overflow:hidden;
+        background-color: #003E77;   
+     }
+
+     #btn {
+        font-size: 30px;
+     }
+     
+     .mark {
+        position: relative;
+        width: 600px;
+        height: 570px;
+        position: absolute;
+        left: 53%;
+        margin-left: -300px;
+        bottom:0;
+        /*CENTER PICTURE IF YOU WOULD LIKE ONE*/
+        /*background: url('cup.jpg') center no-repeat;*/
+        background-size: 100%;
+     }
+
+     @-webkit-keyframes circleBad {
+        from { -webkit-transform: rotate(0deg)
+                translate(-330px)
+                rotate(0deg);
+                opacity: 0.8;
+                background-color: red;
+                border-radius: 1px;
+                -webkit-box-shadow: 10px 15px 60px black;
+
+        }
+        to {   -webkit-transform: rotate(360deg)
+                translate(-330px) 
+                rotate(-360deg);
+                background-color: blue;
+                opacity: 0.3;
+                border-radius: 20px;
+                -webkit-box-shadow: 1px 1px 30px black;
+        }
+    }
+
+    @-webkit-keyframes circle {
+        from { -webkit-transform: rotate(0deg)
+                translate(-330px)
+                rotate(0deg);
+                opacity:0.8;
+        }
+        to {   -webkit-transform: rotate(360deg)
+                translate(-330px) 
+                rotate(-360deg);
+                opacity:0.5;
+        }
+    }
+
+    .cloud {
+        position: absolute;
+        top: 0;
+        left: 20%;
+        background: url('html5.png') center no-repeat;
+        background-size: cover;
+        width: 400px;
+        height: 400px;
+        margin-left: -70px;
+    }
+
+    .cloudAnim1 {
+        top: 0px;
+        -webkit-animation: circle 5.5s linear infinite;
+    }
+    .cloudAnim2 {
+        top: 20px;
+        -webkit-animation: circle 4s linear infinite;
+    }
+    .cloudAnim3 {
+        top: 40px;
+        -webkit-animation: circle 2s linear infinite;   
+    }
+    .cloudAnim4 {
+        top: 30px;
+        -webkit-animation: circle 3s linear infinite;
+        -webkit-animation-direction: reverse;   
+    }
+    .cloudAnim5 {
+        top: 30px;
+        -webkit-animation: circle 3s linear infinite;   
+    }
+    .cloudAnim6 {
+        top: 20px;
+        -webkit-animation: circle 4s linear infinite;   
+        -webkit-animation-direction: reverse;
+    }
+    .cloudAnim7 {
+        top: 20px;
+        -webkit-animation: circle 2.5s linear infinite;   
+    }
+    .cloudAnim8 {
+        top: 10px;
+        -webkit-animation: circle 6s linear infinite;
+        -webkit-animation-direction: reverse;   
+    }
+    .cloudAnim9 {
+        top: 1px;
+        -webkit-animation: circle 5.5s linear infinite;   
+    }
+    .cloudAnim10 {
+        top: 12px;
+        -webkit-animation: circle 8.5s linear infinite;   
+    }
+    .cloudAnim11 {
+        top: 7px;
+        -webkit-animation: circle 3.5s linear infinite;   
+        -webkit-animation-direction: reverse;   
+    }
+    .cloudAnim12 {
+        top: 2px;
+        -webkit-animation: circle 4.1s linear infinite;   
+    }
+    .cloudAnim13 {
+        top: 4px;
+        -webkit-animation: circle 5.8s linear infinite;
+        -webkit-animation-direction: reverse;      
+    }
+    .cloudAnim14 {
+        top: 8px;
+        -webkit-animation: circle 3.4s linear infinite;   
+    }
+    .cloudAnim15 {
+        top: 5px;
+        -webkit-animation: circle 2.7s linear infinite;
+        -webkit-animation-direction: reverse;      
+    }
+    .cloudAnim16 {
+        top: 65px;
+        -webkit-animation: circle 8.7s linear infinite;   
+    }
+
+    .BadcloudAnim1 {
+        top: 0px;
+        -webkit-animation: circleBad 5.5s linear infinite;
+    }
+    .BadcloudAnim2 {
+        top: 20px;
+        -webkit-animation: circleBad 4s linear infinite;
+    }
+    .BadcloudAnim3 {
+        top: 40px;
+        -webkit-animation: circleBad 2s linear infinite;   
+    }
+    .BadcloudAnim4 {
+        top: 30px;
+        -webkit-animation: circleBad 3s linear infinite;
+        -webkit-animation-direction: reverse;   
+    }
+    .BadcloudAnim5 {
+        top: 30px;
+        -webkit-animation: circleBad 3s linear infinite;   
+    }
+    .BadcloudAnim6 {
+        top: 20px;
+        -webkit-animation: circleBad 4s linear infinite;   
+        -webkit-animation-direction: reverse;
+    }
+    .BadcloudAnim7 {
+        top: 20px;
+        -webkit-animation: circleBad 2.5s linear infinite;   
+    }
+    .BadcloudAnim8 {
+        top: 10px;
+        -webkit-animation: circleBad 6s linear infinite;
+        -webkit-animation-direction: reverse;   
+    }
+    .BadcloudAnim9 {
+        top: 1px;
+        -webkit-animation: circleBad 5.5s linear infinite;   
+    }
+    .BadcloudAnim10 {
+        top: 12px;
+        -webkit-animation: circleBad 8.5s linear infinite;   
+    }
+    .BadcloudAnim11 {
+        top: 7px;
+        -webkit-animation: circleBad 3.5s linear infinite;   
+        -webkit-animation-direction: reverse;   
+    }
+    .BadcloudAnim12 {
+        top: 2px;
+        -webkit-animation: circleBad 4.1s linear infinite;   
+    }
+    .BadcloudAnim13 {
+        top: 4px;
+        -webkit-animation: circleBad 5.8s linear infinite;
+        -webkit-animation-direction: reverse;      
+    }
+    .BadcloudAnim14 {
+        top: 8px;
+        -webkit-animation: circleBad 3.4s linear infinite;   
+    }
+    .BadcloudAnim15 {
+        top: 5px;
+        -webkit-animation: circleBad 2.7s linear infinite;
+        -webkit-animation-direction: reverse;      
+    }
+    .BadcloudAnim16 {
+        top: 65px;
+        -webkit-animation: circleBad 8.7s linear infinite;   
+    }
+
+    </style>
+</head>
+<body>
+    <button id="btn">TO THE FUTURE!</button>
+    <div class="mark">
+        <div class="noncloudAnim1  cloud"></div>
+        <div class="noncloudAnim2  cloud"></div>
+        <div class="noncloudAnim3  cloud"></div>
+        <div class="noncloudAnim4  cloud"></div>
+        <div class="noncloudAnim5  cloud"></div>
+        <div class="noncloudAnim6  cloud"></div>
+        <div class="noncloudAnim7  cloud"></div>
+        <div class="noncloudAnim8  cloud"></div>
+        <div class="noncloudAnim9  cloud"></div>
+        <div class="noncloudAnim10 cloud"></div>
+        <div class="noncloudAnim11 cloud"></div>
+        <div class="noncloudAnim12 cloud"></div>
+        <div class="noncloudAnim13 cloud"></div>
+        <div class="noncloudAnim14 cloud"></div>
+        <div class="noncloudAnim15 cloud"></div>
+        <div class="noncloudAnim16 cloud"></div>
+    </div>
+    <script>
+        var FUTURE = true, btn = document.getElementById('btn');
+
+        btn.addEventListener('click', function (e) {
+            var clouds = document.querySelectorAll('.cloud');
+
+            for (var i = 0; i < clouds.length; i++) {
+                if (!FUTURE) {
+                    clouds[i].className = 'Bad' + clouds[i].className;
+                } else {
+                    clouds[i].className = clouds[i].className.substr(3);
+                    btn.innerHTML = 'TO THE FUTURE AND BEYOND!';
+
+                }
+                
+            }
+
+            FUTURE = !FUTURE;
+        });
+    </script>
+    
+</body>
+</html>

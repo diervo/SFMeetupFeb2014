@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paint Time</title>
+    <style>
+
+    img {
+        position: absolute;
+        max-height: 500px;
+    }
+    .shadows img {
+        border-radius: 10px;
+        -webkit-box-shadow: 15px 15px 50px black;
+    }
+
+    #container {
+        position: absolute;
+        top: 50px;
+        left:50px;
+        display: none;
+        width: 500px;
+        height: 500px;
+    }
+
+    #container.active{
+        display:block;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="cat.jpeg"/>
+        <img src="cat.jpeg"/>
+        <img src="cat.jpeg"/>
+        <img src="cat.jpeg"/>
+        <img src="cat.jpeg"/>
+        <img src="cat.jpeg"/>
+        <img src="cat.jpeg"/>
+    </div>
+    
+    <div id="controls">
+        <button id="paint">Paint!</button>
+        <button id="paintS">Paint with Shadows!</button>
+    </div>
+    <script>
+        document.getElementById('paint').addEventListener('click',function () {
+            document.getElementById('controls').style.display = 'none';
+            setTimeout(function () {
+                window.requestAnimationFrame(function () {
+                    document.getElementById('container').className = 'active';    
+                });
+            }, 1000);
+        }, false);  
+
+        document.getElementById('paintS').addEventListener('click',function () {
+            document.getElementById('controls').style.display = 'none';
+            setTimeout(function () {
+                window.requestAnimationFrame(function () {
+                    document.getElementById('container').className = 'active shadows';    
+                });
+            }, 1000);
+        }, false);  
+
+    </script>
+</body>
+</html>

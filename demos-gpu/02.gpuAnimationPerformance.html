@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GPU render</title>
+    <!--
+        GPUPERFORMANCE DEMO
+        =========================================================================
+
+        TO VISUALIZE THIS DEMO YOU NEED TO ENABLE THE SAFARI DEBUG MODE:
+        defaults write com.apple.Safari IncludeInternalDebugMenu 1
+
+        OR
+
+        USE CHROME CANARY WITH THIS FLAGS ENABLED (NOT STRICLY NEEDED BUT YOU WILL HAVE MORE VISUALIZATION TOOLS ACTIVE)
+        --enable-threaded-compositing --force-compositing-de --enable-impl-side-painting --enable-skia-benchmarking --allow-webui-compositing
+    -->
+	<style>
+    pre {
+        position: absolute;
+        top: 300px;
+        display: none;
+        z-index: 2;
+        -webkit-transform: translate3d(0,0,0);
+        font-size: 22px;
+    }
+    .container {
+        position: relative;
+        width:100%;
+    }
+    #target {
+        position: absolute;
+        top: 40px;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        min-width: 200px;
+        height: 210px;
+    }
+    #target img {
+        max-width: 200px;
+        opacity: 0.5;
+    }
+
+    .moving {
+        -webkit-animation-name: move;
+    }
+
+    .colorfull {
+        -webkit-animation-name: color;   
+    }
+
+    /* 
+        MOVE ANIMATION 
+        USING ONLY TRANSLATE3D AND OPACITY
+    */
+    @-webkit-keyframes move {
+          0% { -webkit-transform: translate3d(0, 0, 0); opacity: 1; }
+        100% { -webkit-transform: translate3d(200px, 0, 0); opacity: 0.3; }
+    }
+
+    /* 
+        COLOR ANIMATION
+        USING ONLY TRANSLATE3D AND OPACITY
+    */
+
+    @-webkit-keyframes color {
+        0% {
+            -webkit-transform: translate3d(0, 0, 0); 
+            background-color: rgba(23,65,34,1); 
+        }
+        100% { 
+            -webkit-transform: translate3d(200px, 0, 0); 
+            background-color: rgba(120, 12, 98, 1); 
+        }
+    }
+
+	</style>
+</head>
+<body>
+    <div id="container">
+        <div id="target">
+            <img src="html5.png"/>
+        </div>
+    </div>
+    <button id= "stop">Stop and reset!</button>
+    <button id="trigger1">Trigger transformation and opacity!</button>
+    <button id="trigger2">Trigger transformation and color change!</button>
+    <script>
+        document.getElementById('stop').addEventListener('click', function () {
+            document.getElementById('target').className = '';
+            document.getElementById('move').style.display = 'none';
+            document.getElementById('color').style.display = 'none';
+        });
+        document.getElementById('trigger1').addEventListener('click', function () {
+            document.getElementById('target').className = 'moving';
+            document.getElementById('move').style.display = 'block';
+            document.getElementById('color').style.display = 'none';
+        });
+        document.getElementById('trigger2').addEventListener('click', function () {
+            var div = document.getElementById('target').className = 'colorfull';
+            document.getElementById('color').style.display = 'block';
+            document.getElementById('move').style.display = 'none';
+        });
+    </script>
+
+    <pre id="move">
+    @keyframes move {
+        0% {  
+            transform: translate3d(0, 0, 0); 
+            opacity: 0.6; 
+        }
+
+        100% {  
+            transform: translate3d(250px, 0, 0); 
+            opacity: 0.2; 
+        }
+    }
+    </pre>
+    <pre id="color">
+    @keyframes color {
+        0% { 
+            transform: translate3d(0, 0, 0); 
+            background-color: rgb(55, 55, 55); 
+        }
+        100% { 
+            transform: translate(150px, 0); 
+            background-color: rgb(120, 120, 120); 
+        }
+    }
+    </pre>
+</body>
+</html>
